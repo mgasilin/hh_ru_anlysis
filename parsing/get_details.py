@@ -7,7 +7,7 @@ import random
 import logging
 
 
-def get_info_by_vacancies_urls(input_path = 'all_links.json', output_path = 'vacancies_details2.json'):
+def get_info_by_vacancies_urls(input_path = 'new_links.json', output_path = 'vacancies_details.json'):
     
     data=[] 
 
@@ -86,11 +86,13 @@ def get_info_by_vacancies_urls(input_path = 'all_links.json', output_path = 'vac
 
             except:
                 logger.error(f"Запрос не прошёл")
-
-
+        
+        logger.debug("Загрузка завершена")
+        return
 
     except:
         logger.error("Загрузка прервана")
+        return
 
 
 
